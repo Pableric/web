@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>SofL — Visual Direction Review</title>
+    <link rel="icon" href="./shared/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./shared/base.css" />
+    <style>
+      :root {
+        --paper: #f1efe8;
+        --ink: #11110f;
+        --rule: #cbc8be;
+      }
+
+      body {
+        background: var(--paper);
+        color: var(--ink);
+      }
+
+      main {
+        width: min(100% - 40px, 1320px);
+        margin: 0 auto;
+        padding: 34px 0 80px;
+      }
+
+      header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        padding-bottom: 90px;
+      }
+
+      .brand {
+        font-size: 26px;
+        font-weight: 600;
+        letter-spacing: -0.06em;
+      }
+
+      .eyebrow,
+      .direction-index {
+        font-size: 12px;
+        line-height: 1;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 980px;
+        font-size: clamp(54px, 8vw, 116px);
+        line-height: 0.91;
+        letter-spacing: -0.065em;
+        font-weight: 500;
+      }
+
+      .intro {
+        max-width: 640px;
+        margin: 38px 0 90px auto;
+        font-size: 20px;
+        line-height: 1.45;
+        color: #5d5b55;
+      }
+
+      .directions {
+        border-top: 1px solid var(--rule);
+      }
+
+      .direction {
+        display: grid;
+        grid-template-columns: 80px 1.1fr 1fr auto;
+        gap: 24px;
+        align-items: center;
+        min-height: 180px;
+        padding: 28px 0;
+        border-bottom: 1px solid var(--rule);
+        text-decoration: none;
+      }
+
+      .direction h2 {
+        font-size: clamp(30px, 4vw, 58px);
+        line-height: 0.96;
+        letter-spacing: -0.045em;
+        font-weight: 500;
+      }
+
+      .direction p {
+        max-width: 440px;
+        color: #68665f;
+        line-height: 1.5;
+      }
+
+      .arrow {
+        display: grid;
+        width: 50px;
+        height: 50px;
+        place-items: center;
+        border: 1px solid currentColor;
+        border-radius: 50%;
+        font-size: 22px;
+        transition: 220ms ease;
+      }
+
+      .direction:hover .arrow {
+        transform: translate(3px, -3px);
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .note {
+        margin-top: 36px;
+        font-size: 13px;
+        color: #77746c;
+      }
+
+      @media (max-width: 760px) {
+        main {
+          width: min(100% - 28px, 1320px);
+          padding-top: 24px;
+        }
+
+        header {
+          padding-bottom: 72px;
+        }
+
+        .eyebrow {
+          max-width: 150px;
+          text-align: right;
+          line-height: 1.4;
+        }
+
+        .intro {
+          margin: 28px 0 64px;
+          font-size: 17px;
+        }
+
+        .direction {
+          grid-template-columns: 42px 1fr 44px;
+          min-height: 210px;
+          gap: 14px;
+        }
+
+        .direction p {
+          grid-column: 2 / -1;
+          grid-row: 2;
+          font-size: 15px;
+        }
+
+        .arrow {
+          width: 42px;
+          height: 42px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <span class="brand">SofL</span>
+        <span class="eyebrow">First-screen exploration / 2026</span>
+      </header>
+
+      <h1>Three ways to make performance feel tangible.</h1>
+      <p class="intro">
+        Each direction uses the same claims and narrative. The difference is
+        posture: infrastructure, editorial science, or precision luxury.
+      </p>
+
+      <section class="directions" aria-label="Visual directions">
+        <a class="direction" href="./quant-infrastructure/">
+          <span class="direction-index">A / 01</span>
+          <h2>Quant Infrastructure</h2>
+          <p>Structured, explicit and metric-forward. The machine is visible, but never disclosed.</p>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="direction" href="./scientific-editorial/">
+          <span class="direction-index">B / 02</span>
+          <h2>Scientific Editorial</h2>
+          <p>Large type, asymmetry and visual pacing. The recommended institutional direction.</p>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="direction" href="./precision-luxury/">
+          <span class="direction-index">C / 03</span>
+          <h2>Precision Luxury</h2>
+          <p>Fewer elements, more tension. One extraordinary number carries the opening scene.</p>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </section>
+
+      <p class="note">Review build only. Numerical claims remain deployment-gated.</p>
+    </main>
+  </body>
+</html>

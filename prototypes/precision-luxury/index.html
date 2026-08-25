@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#f5f2ea" />
+    <title>SofL — Precision Luxury Direction</title>
+    <link rel="icon" href="../shared/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../shared/base.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="../shared/prototype.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="../" aria-label="SofL visual direction review">SofL</a>
+      <nav aria-label="Primary navigation">
+        <a href="#performance">Performance</a>
+        <a href="#technology">Technology</a>
+        <a href="#validation">Validation</a>
+        <a href="#products">Products</a>
+      </nav>
+      <a class="contact-link" href="mailto:pablo@sofl.io">pablo@sofl.io <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-topline">
+          <span>Precision numerical systems</span>
+          <span>A / N64 / 4,096</span>
+        </div>
+
+        <h1 id="hero-title">Derivatives pricing<br />at hardware speed.</h1>
+
+        <div class="measure" aria-label="14.247 microseconds fresh N64 arithmetic valuation">
+          <svg class="precision-field" viewBox="0 0 1500 390" aria-hidden="true">
+            <defs>
+              <linearGradient id="precisionFade" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#a5a49d" stop-opacity="0" />
+                <stop offset="0.2" stop-color="#a5a49d" />
+                <stop offset="0.78" stop-color="#a5a49d" />
+                <stop offset="1" stop-color="#a5a49d" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+            <circle class="orbit orbit-one" cx="1090" cy="194" r="160" />
+            <circle class="orbit orbit-two" cx="1090" cy="194" r="96" />
+            <path class="baseline" d="M0 194H1500" />
+            <path class="resolved-line" d="M128 194H1090" />
+            <g class="ticks">
+              <path d="M128 181V207M320 187V201M512 187V201M704 181V207M896 187V201M1090 176V212M1280 187V201M1472 181V207" />
+            </g>
+            <circle class="resolved-node" cx="1090" cy="194" r="7" />
+          </svg>
+
+          <div class="measure-value">
+            <span class="number">14.247</span>
+            <span class="unit">µs</span>
+          </div>
+          <div class="measure-caption">
+            <span>Fresh N64 arithmetic valuation</span>
+            <span>One pinned Sapphire Rapids core</span>
+          </div>
+        </div>
+
+        <div class="hero-bottom">
+          <p>
+            Proprietary high-performance QMC execution technology for
+            low-latency derivatives pricing and risk.
+          </p>
+          <div class="capabilities" aria-label="Capabilities">
+            <span>Single-core CPU</span>
+            <span>Path-dependent derivatives</span>
+            <span>Price &amp; Greeks</span>
+          </div>
+          <a class="primary-cta" href="mailto:pablo@sofl.io">
+            Request a technical evaluation <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="performance" id="performance" aria-labelledby="performance-title">
+        <div class="performance-intro">
+          <span class="section-index">01 / Qualified performance</span>
+          <h2 id="performance-title">Measured from request to result.</h2>
+        </div>
+
+        <div class="metric-list">
+          <article class="metric" data-reveal>
+            <span class="metric-name">Arithmetic / N64</span>
+            <p>14.247 <small>µs</small></p>
+            <span class="metric-detail">Fresh valuation</span>
+          </article>
+          <article class="metric" data-reveal>
+            <span class="metric-name">GeoCV / N64</span>
+            <p>24–27 <small>µs</small></p>
+            <span class="metric-detail">Fresh valuation</span>
+          </article>
+          <article class="metric compact" data-reveal>
+            <span class="metric-name">Reference contract</span>
+            <p>4,096 <small>× 64</small></p>
+            <span class="metric-detail">Paths × fixing dates</span>
+          </article>
+          <article class="metric compact accent-metric" data-reveal>
+            <span class="metric-name">Compute boundary</span>
+            <p>1 <small>CPU core</small></p>
+            <span class="metric-detail">Intel Sapphire Rapids</span>
+          </article>
+        </div>
+
+        <p class="qualification">
+          Current qualified benchmark configuration. Engine-running
+          request-to-result latency on one pinned Sapphire Rapids core. Full
+          methodology available for technical evaluation.
+        </p>
+      </section>
+
+      <section class="next-scene" id="technology" aria-labelledby="technology-title">
+        <span class="section-index inverse">02 / Execution philosophy</span>
+        <h2 id="technology-title" data-reveal>Less machinery.<br /><span>More result.</span></h2>
+        <div class="next-lower">
+          <p data-reveal>
+            SofL is designed around the financial computation itself rather
+            than composing the pricing path from general-purpose numerical primitives.
+          </p>
+          <div class="signal" aria-hidden="true"><i></i><span></span></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

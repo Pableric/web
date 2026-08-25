@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#f1f1ef" />
+    <title>SofL — Hero Animation Lab</title>
+    <meta
+      name="description"
+      content="Twenty private motion studies for the SofL performance hero."
+    />
+    <link rel="icon" href="../site/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="../site/js/vendor/gsap.min.js" defer></script>
+    <script src="./main.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#candidates">Skip to candidates</a>
+
+    <header class="lab-header">
+      <a class="lab-brand" href="#top">
+        <span aria-hidden="true">S</span>
+        <strong>SofL</strong>
+        <i>Animation lab</i>
+      </a>
+
+      <nav aria-label="Lab navigation">
+        <a href="#shortlist">Shortlist</a>
+        <a href="#candidates">20 candidates</a>
+        <a href="../site/">Current site ↗</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="lab-intro" aria-labelledby="lab-title">
+        <p class="eyebrow">Private motion study / 2026</p>
+        <h1 id="lab-title">Twenty ways<br /><em>to say faster.</em></h1>
+
+        <div class="intro-lower">
+          <p>
+            Professional, monochrome landing sequences for Monte Carlo pricing,
+            numerical comparison and validated performance.
+          </p>
+          <dl>
+            <div><dt>Format</dt><dd>1.93 : 1 hero block</dd></div>
+            <div><dt>Runtime</dt><dd>Finite / replayable</dd></div>
+            <div><dt>Stack</dt><dd>SVG + GSAP core</dd></div>
+          </dl>
+        </div>
+
+        <aside class="claim-note" aria-label="Placeholder data notice">
+          <strong>Concept data only</strong>
+          <p>
+            Figures in this lab are visual placeholders. Nothing here is approved
+            for public performance claims.
+          </p>
+        </aside>
+      </section>
+
+      <section class="shortlist" id="shortlist" aria-labelledby="shortlist-title">
+        <p class="section-label">Recommended starting points</p>
+        <h2 id="shortlist-title">My first look: <span>01, 04, 08, 17, 20.</span></h2>
+        <p>
+          These keep the message direct while giving the block a memorable visual
+          signature. The rest deliberately explore a wider range.
+        </p>
+      </section>
+
+      <section class="candidate-section" id="candidates" aria-labelledby="candidates-title">
+        <header class="candidate-header">
+          <div>
+            <p class="section-label">All studies</p>
+            <h2 id="candidates-title">20 candidates</h2>
+          </div>
+
+          <div class="gallery-controls" aria-label="Gallery controls">
+            <button type="button" data-replay-visible>Replay visible</button>
+            <button type="button" data-motion-toggle aria-pressed="false">Pause motion</button>
+          </div>
+        </header>
+
+        <div class="candidate-grid" data-candidate-grid></div>
+
+        <noscript>
+          <p class="noscript-note">Enable JavaScript to view the motion studies.</p>
+        </noscript>
+      </section>
+    </main>
+
+    <footer class="lab-footer">
+      <span>SofL / Animation lab</span>
+      <span>Review only — not part of the production site</span>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+
+    <dialog class="focus-dialog" data-focus-dialog aria-labelledby="focus-title">
+      <div class="dialog-bar">
+        <div>
+          <span data-focus-index>01 / 20</span>
+          <strong id="focus-title" data-focus-title>Candidate</strong>
+        </div>
+        <div>
+          <button type="button" data-focus-prev aria-label="Previous candidate">←</button>
+          <button type="button" data-focus-next aria-label="Next candidate">→</button>
+          <button type="button" data-focus-replay>Replay</button>
+          <button type="button" data-focus-close>Close ×</button>
+        </div>
+      </div>
+      <div class="dialog-stage" data-focus-stage></div>
+      <p class="dialog-note" data-focus-note></p>
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 60" role="img" aria-labelledby="title">
+  <title id="title">SofL</title>
+  <rect width="180" height="60" fill="none" />
+  <text x="4" y="46" fill="#0a0a09" font-family="Instrument Sans, Helvetica Neue, Arial, sans-serif" font-size="52" font-weight="600" letter-spacing="-4">SofL</text>
+  <circle cx="172" cy="11" r="5" fill="#0a0a09" />
+</svg>

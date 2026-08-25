@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f1f1ef" />
+    <meta name="color-scheme" content="light" />
+    <meta name="robots" content="index, follow" />
+
+    <title>SofL — High-Performance Derivatives Pricing</title>
+    <meta
+      name="description"
+      content="SofL develops high-performance CPU QMC technology for low-latency derivatives pricing, risk and path-dependent financial computation."
+    />
+    <link rel="canonical" href="https://sofl.io/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SofL" />
+    <meta property="og:title" content="SofL — High-Performance Derivatives Pricing" />
+    <meta
+      property="og:description"
+      content="High-performance CPU QMC technology for derivatives pricing, risk and path-dependent financial computation."
+    />
+    <meta property="og:url" content="https://sofl.io/" />
+    <meta property="og:image" content="https://sofl.io/assets/sofl-og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="SofL — Derivatives pricing at hardware speed" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SofL — High-Performance Derivatives Pricing" />
+    <meta
+      name="twitter:description"
+      content="High-performance CPU QMC technology for derivatives pricing and risk."
+    />
+    <meta name="twitter:image" content="https://sofl.io/assets/sofl-og.png" />
+
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./js/vendor/gsap.min.js" defer></script>
+    <script src="./js/main.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <a class="wordmark" href="#top" aria-label="SofL home">
+          <img class="wordmark-logo" src="./assets/logo.png" alt="" width="479" height="185" />
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="#performance">Performance</a>
+          <a href="#technology">Technology</a>
+          <a href="#validation">Validation</a>
+          <a href="#products">Products</a>
+          <a href="#leadership">About</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="header-cta" href="#contact">Contact</a>
+          <span class="header-tool" aria-hidden="true">◌</span>
+        </div>
+
+        <details class="mobile-menu" data-mobile-menu>
+          <summary>Menu</summary>
+          <nav aria-label="Mobile navigation">
+            <a href="#performance">Performance</a>
+            <a href="#technology">Technology</a>
+            <a href="#validation">Validation</a>
+            <a href="#products">Products</a>
+            <a href="#leadership">About</a>
+            <a href="#contact">Request evaluation <span aria-hidden="true">↗</span></a>
+          </nav>
+        </details>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero shell" id="top" aria-labelledby="hero-title">
+        <h1 id="hero-title">Derivatives pricing.<br /><em>At hardware speed.</em></h1>
+
+        <div class="hero-stage">
+          <div class="hero-comparison" data-hero-comparison>
+            <div class="hero-visual-label">
+              <span>Matched performance / N64 reference</span>
+              <span>Lower is better</span>
+            </div>
+
+            <div class="ratio-visual" aria-hidden="true">
+              <div class="ratio-watermark">FASTER</div>
+              <svg viewBox="0 0 1600 829" preserveAspectRatio="xMidYMid slice">
+                <g class="ratio-grid">
+                  <path d="M80 220H1520 M80 280H1520 M80 340H1520 M80 400H1520 M80 460H1520 M80 520H1520 M80 580H1520" />
+                  <path d="M200 170V630 M400 170V630 M600 170V630 M800 170V630 M1000 170V630 M1200 170V630 M1400 170V630" />
+                </g>
+
+                <g class="ratio-cut">
+                  <path class="ratio-cut-main" pathLength="1" d="M80 520H1520" />
+                  <path class="ratio-cut-ghost" pathLength="1" d="M80 548H1520" />
+                  <circle class="ratio-cut-node" cx="1520" cy="520" r="8" />
+                </g>
+              </svg>
+            </div>
+
+            <div class="hero-number" aria-label="28 times faster">
+              <span>28</span><small>×</small>
+            </div>
+
+            <div class="comparison-tracks" aria-label="Relative execution time comparison; lower is better">
+              <div class="comparison-track baseline-track">
+                <div class="track-label">
+                  <span>Commercial baseline</span>
+                  <span>1× time</span>
+                </div>
+                <div class="track-line" aria-hidden="true">
+                  <i></i><b></b>
+                </div>
+              </div>
+
+              <div class="comparison-track sofl-track">
+                <div class="track-label">
+                  <span>SofL</span>
+                  <span>1/28 time</span>
+                </div>
+                <div class="track-line" aria-hidden="true">
+                  <i></i><b></b>
+                </div>
+              </div>
+            </div>
+
+            <p class="comparison-caption">Faster on the matched reference workload</p>
+          </div>
+
+          <aside class="hero-rail" aria-label="SofL performance summary">
+            <article class="hero-rail-intro">
+              <span class="rail-index">About SofL</span>
+              <p>
+                Proprietary high-performance QMC execution technology for
+                low-latency derivatives pricing and risk.
+              </p>
+              <ul class="capability-list" aria-label="Core capabilities">
+                <li>Single-core CPU</li>
+                <li>Path-dependent derivatives</li>
+                <li>Price &amp; Greeks</li>
+              </ul>
+            </article>
+
+            <article class="hero-rail-metric">
+              <span class="rail-index">Reference Python</span>
+              <strong>3,000<small>×</small></strong>
+              <p>Faster than the reference Python implementation.</p>
+            </article>
+
+            <article class="hero-rail-scope">
+              <span class="rail-index">Reference workload</span>
+              <strong>4,096 × 64</strong>
+              <p>Paths × fixing dates / one Sapphire Rapids core.</p>
+            </article>
+
+            <a class="hero-rail-cta" href="mailto:pablo@sofl.io?subject=SofL%20technical%20evaluation">
+              Request a technical evaluation <span aria-hidden="true">↗</span>
+            </a>
+          </aside>
+        </div>
+
+        <p class="claim-note">
+          Comparison figures supplied for this review build. Publication
+          requires the matched workload, hardware, outputs and lifecycle
+          boundary to be frozen in the claims ledger.
+        </p>
+      </section>
+
+      <section class="performance section-pad" id="performance" aria-labelledby="performance-title">
+        <div class="shell">
+          <div class="section-intro split-intro">
+            <p class="section-label">01 / Matched performance</p>
+            <h2 id="performance-title" data-reveal>Performance,<br />stated plainly.</h2>
+          </div>
+
+          <div class="performance-grid">
+            <article class="performance-card performance-card-primary" data-reveal>
+              <p class="performance-value">28<span>×</span></p>
+              <h3>Matched commercial baseline</h3>
+              <p>Same N64 reference workload and requested output.</p>
+            </article>
+
+            <article class="performance-card performance-card-primary" data-reveal>
+              <p class="performance-value">3,000<span>×</span></p>
+              <h3>Reference Python implementation</h3>
+              <p>Reference implementation, not optimized native code.</p>
+            </article>
+
+            <article class="performance-card performance-card-compact" data-reveal>
+              <p class="performance-value">4,096<span> × 64</span></p>
+              <h3>Paths × fixing dates</h3>
+              <p>Qualified N64 reference workload.</p>
+            </article>
+
+            <article class="performance-card performance-card-compact has-accent" data-reveal>
+              <p class="performance-value">1<span> CPU core</span></p>
+              <h3>Intel Sapphire Rapids</h3>
+              <p>Engine-running request-to-result boundary.</p>
+            </article>
+          </div>
+
+          <p class="performance-qualification">
+            Draft comparison claims for final review. The commercial and Python
+            baselines must be frozen with the same contract, path count, fixing
+            count, output, CPU and lifecycle boundary before publication.
+          </p>
+        </div>
+      </section>
+
+      <section class="technology section-pad section-dark" id="technology" aria-labelledby="technology-title">
+        <div class="shell">
+          <p class="section-label section-label-dark">02 / Execution philosophy</p>
+          <h2 id="technology-title" data-reveal>
+            Less machinery.<br /><span>More result.</span>
+          </h2>
+
+          <div class="technology-lower">
+            <p data-reveal>
+              SofL is designed around the financial computation itself rather
+              than composing the pricing path from general-purpose numerical primitives.
+            </p>
+
+            <div class="time-comparison" aria-label="Conceptual relative numerical stack comparison" data-reveal>
+              <div>
+                <span>General-purpose numerical stack</span>
+                <i class="long-line"></i>
+              </div>
+              <div>
+                <span>SofL execution</span>
+                <i class="short-line"></i>
+              </div>
+              <small>Conceptual execution footprint</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="validation section-pad" id="validation" aria-labelledby="validation-title">
+        <div class="shell">
+          <div class="section-intro validation-intro">
+            <p class="section-label">03 / Validation</p>
+            <h2 id="validation-title" data-reveal>Independently checked.</h2>
+            <p class="section-copy" data-reveal>
+              Speed matters only when the returned number remains credible.
+              The qualified N64 reference contract is checked against an
+              independent high-accuracy QuantLib reference.
+            </p>
+          </div>
+
+          <div class="accuracy-layout">
+            <div class="accuracy-statement" data-reveal>
+              <p class="accuracy-multiple">~20<span>×</span></p>
+              <h3>Lower observed absolute error</h3>
+              <p>GeoCV versus plain arithmetic on the qualified N64 ATM GBM reference contract.</p>
+            </div>
+
+            <figure class="accuracy-chart" data-accuracy-chart>
+              <figcaption>
+                <span>Absolute error</span>
+                <span>4,096 paths / N = 64</span>
+              </figcaption>
+
+              <div class="bar-row plain-row">
+                <div class="bar-meta">
+                  <span>Plain</span>
+                  <strong>≈ 0.0234</strong>
+                </div>
+                <div class="bar-track"><i style="--bar-width: 100%"></i></div>
+              </div>
+
+              <div class="bar-row geocv-row">
+                <div class="bar-meta">
+                  <span>GeoCV</span>
+                  <strong>≈ 0.00113</strong>
+                </div>
+                <div class="bar-track"><i style="--bar-width: 4.83%"></i></div>
+              </div>
+
+              <p class="chart-source">Independent QuantLib reference / lower is better</p>
+            </figure>
+          </div>
+
+          <p class="case-qualification">
+            Measured on the qualified N64 ATM GBM reference contract. This is a
+            case-specific result and not a claim across the full parameter surface.
+          </p>
+
+          <details class="methodology">
+            <summary>Reference contract and methodology <span aria-hidden="true">+</span></summary>
+            <div class="methodology-grid">
+              <div>
+                <h3>Contract</h3>
+                <dl>
+                  <div><dt>S0</dt><dd>100</dd></div>
+                  <div><dt>K</dt><dd>100</dd></div>
+                  <div><dt>r</dt><dd>3%</dd></div>
+                  <div><dt>q</dt><dd>0</dd></div>
+                  <div><dt>σ</dt><dd>20%</dd></div>
+                  <div><dt>T</dt><dd>1 year</dd></div>
+                  <div><dt>N</dt><dd>64</dd></div>
+                  <div><dt>Paths</dt><dd>4,096 fixed QMC</dd></div>
+                </dl>
+              </div>
+              <div>
+                <h3>Independent reference</h3>
+                <p>
+                  QuantLib PseudoRandom GeoCV with antithetic sampling and
+                  Brownian bridge. Sixteen independent replications with
+                  1,048,576 requested samples per replication and a Student-t
+                  95% confidence interval.
+                </p>
+              </div>
+            </div>
+          </details>
+
+          <div class="validation-strip" aria-label="Additional validation evidence">
+            <article data-reveal>
+              <p>7.11 × 10<sup>−15</sup></p>
+              <h3>Analytic geometric validation</h3>
+              <span>Absolute error</span>
+            </article>
+            <article data-reveal>
+              <p>N = 2 … 250</p>
+              <h3>Published reference cases</h3>
+              <span>Compatible Asian cases passed</span>
+            </article>
+            <article data-reveal>
+              <p>16 × 1,048,576</p>
+              <h3>Strong N64 reference</h3>
+              <span>Reference sampling ladder</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="products section-pad" id="products" aria-labelledby="products-title">
+        <div class="shell">
+          <div class="section-intro split-intro product-intro">
+            <p class="section-label">04 / Product family</p>
+            <h2 id="products-title" data-reveal>
+              One execution foundation.<br />Multiple pricing workloads.
+            </h2>
+          </div>
+
+          <div class="foundation" data-reveal>
+            <span>SofL execution foundation</span>
+            <i aria-hidden="true"></i>
+            <span>CPU-native / proprietary QMC</span>
+          </div>
+
+          <div class="product-grid">
+            <article data-reveal>
+              <span class="product-index">01</span>
+              <h3>European</h3>
+              <ul>
+                <li>European pricing engine</li>
+              </ul>
+            </article>
+
+            <article data-reveal>
+              <span class="product-index">02</span>
+              <h3>Asian pricing</h3>
+              <ul>
+                <li>Arithmetic price</li>
+                <li>Arithmetic price + Delta</li>
+                <li>Geometric control variate</li>
+                <li>GeoCV price + Delta</li>
+                <li>Multi-strike price + Delta</li>
+                <li>Full-risk price + Delta + Vega + Rho</li>
+              </ul>
+            </article>
+
+            <article data-reveal>
+              <span class="product-index">03</span>
+              <h3>Path-dependent variants</h3>
+              <ul>
+                <li>Seasoned arithmetic / GeoCV</li>
+                <li>Discrete barriers</li>
+                <li>Lookbacks</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="risk section-pad section-dark" aria-labelledby="risk-title">
+        <div class="shell risk-layout">
+          <div>
+            <p class="section-label section-label-dark">05 / Risk</p>
+            <h2 id="risk-title" data-reveal>Price is only<br />the first output.</h2>
+          </div>
+
+          <div class="risk-content" data-reveal>
+            <p>
+              SofL kernels are being developed around real pricing workloads,
+              including sensitivities, multi-strike evaluation and path-dependent state.
+            </p>
+            <ul aria-label="Risk outputs">
+              <li>Delta</li>
+              <li>Vega</li>
+              <li>Rho</li>
+              <li>Multi-strike</li>
+              <li>Full-risk evaluation</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="integration section-pad" id="integration" aria-labelledby="integration-title">
+        <div class="shell">
+          <div class="section-intro integration-intro">
+            <p class="section-label">06 / Integration</p>
+            <h2 id="integration-title" data-reveal>Built to fit into existing pricing stacks.</h2>
+            <p class="section-copy" data-reveal>
+              SofL is developing CPU-native numerical pricing components for
+              integration into existing quant, analytics and trading infrastructure.
+            </p>
+          </div>
+
+          <ul class="commercial-modes" aria-label="Commercial engagement modes">
+            <li data-reveal><span>01</span> Technical evaluation</li>
+            <li data-reveal><span>02</span> SDK / component integration</li>
+            <li data-reveal><span>03</span> OEM licensing</li>
+            <li data-reveal><span>04</span> Strategic collaboration</li>
+            <li data-reveal><span>05</span> Co-development</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="leadership section-pad" id="leadership" aria-labelledby="leadership-title">
+        <div class="shell">
+          <div class="section-intro leadership-intro">
+            <p class="section-label">07 / Leadership</p>
+            <h2 id="leadership-title" data-reveal>Built with the next generation in mind.</h2>
+          </div>
+
+          <div class="leadership-grid">
+            <figure class="ceo-portrait" data-reveal>
+              <img
+                src="./assets/deni-ceo.webp"
+                alt="Deni, Chief Executive Officer of SofL"
+                width="1200"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+
+            <div class="ceo-profile" data-reveal>
+              <div class="ceo-role">
+                <span>Chief Executive Officer</span>
+                <span>SofL</span>
+              </div>
+              <h3>Deni</h3>
+              <p>
+                A reminder that the work should be ambitious, exact and built
+                for what comes next.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-scene" id="contact" aria-labelledby="contact-title">
+        <div class="shell">
+          <p class="section-label section-label-dark">08 / Technical evaluation</p>
+          <h2 id="contact-title" data-reveal>Put SofL against<br />your pricing stack.</h2>
+          <div class="contact-lower">
+            <p data-reveal>
+              We are opening SofL to selected pricing teams, analytics vendors
+              and technology partners for independent evaluation, integration
+              and licensing discussions.
+            </p>
+            <a class="button button-accent" href="mailto:pablo@sofl.io?subject=SofL%20technical%20evaluation">
+              Request an evaluation <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <a class="wordmark footer-wordmark" href="#top" aria-label="Back to top">
+          <img class="wordmark-logo" src="./assets/logo.png" alt="" width="479" height="185" />
+        </a>
+        <p>High-performance numerical computing for derivatives pricing.</p>
+        <p>© 2026 SofL</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#eceeea" />
+    <title>SofL — Quant Infrastructure Direction</title>
+    <link rel="icon" href="../shared/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../shared/base.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="../shared/prototype.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="../" aria-label="SofL visual direction review">SofL</a>
+      <span class="edition">A / Quant infrastructure</span>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#performance">Performance</a>
+        <a href="#technology">Technology</a>
+        <a href="#validation">Validation</a>
+        <a href="#products">Products</a>
+      </nav>
+      <a class="nav-cta" href="mailto:pablo@sofl.io">Evaluate <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span>01</span> Proprietary QMC execution</p>
+          <h1 id="hero-title">Derivatives pricing at hardware speed.</h1>
+          <div class="hero-bottom">
+            <p class="lede">
+              Proprietary high-performance QMC execution technology for
+              low-latency derivatives pricing and risk.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-cta" href="mailto:pablo@sofl.io">
+                Request a technical evaluation <span aria-hidden="true">↗</span>
+              </a>
+              <a class="email-link" href="mailto:pablo@sofl.io">pablo@sofl.io</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="execution-panel" aria-hidden="true">
+          <div class="panel-head">
+            <span>Execution field</span>
+            <span>SR / 01 CORE</span>
+          </div>
+          <svg class="lane-visual" viewBox="0 0 720 470" role="presentation">
+            <defs>
+              <linearGradient id="laneFade" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#7f8580" stop-opacity="0.42" />
+                <stop offset="0.56" stop-color="#d8dad6" stop-opacity="0.88" />
+                <stop offset="1" stop-color="#3558ff" />
+              </linearGradient>
+              <clipPath id="fieldClip">
+                <rect x="24" y="68" width="672" height="334" rx="1" />
+              </clipPath>
+            </defs>
+
+            <g class="grid-lines" opacity="0.38">
+              <path d="M24 104H696M24 146H696M24 188H696M24 230H696M24 272H696M24 314H696M24 356H696" />
+              <path d="M110 68V402M196 68V402M282 68V402M368 68V402M454 68V402M540 68V402M626 68V402" />
+            </g>
+
+            <g class="stage-frames">
+              <rect x="256" y="82" width="108" height="306" />
+              <rect x="432" y="112" width="92" height="246" />
+            </g>
+
+            <g clip-path="url(#fieldClip)" class="lanes">
+              <path d="M24 104C148 104 184 104 256 124S402 164 432 176 564 218 696 218" />
+              <path d="M24 146C136 146 188 146 256 156S394 180 432 188 566 220 696 220" />
+              <path d="M24 188C154 188 188 188 256 188S384 196 432 202 574 222 696 222" />
+              <path d="M24 230H256C338 230 372 218 432 216S574 224 696 224" />
+              <path d="M24 272C150 272 190 272 256 260S384 240 432 230 570 226 696 226" />
+              <path d="M24 314C156 314 196 314 256 292S396 254 432 244 562 228 696 228" />
+              <path d="M24 356C158 356 196 356 256 324S402 268 432 258 566 230 696 230" />
+            </g>
+
+            <g class="lane-labels">
+              <text x="24" y="44">NUMERICAL STATES</text>
+              <text x="256" y="64">STRUCTURE</text>
+              <text x="432" y="94">EXECUTE</text>
+              <text x="616" y="202">RESULT</text>
+            </g>
+
+            <g class="output-mark">
+              <circle cx="696" cy="224" r="7" />
+              <path d="M650 248H696" />
+              <text x="606" y="272">PRICE + RISK</text>
+            </g>
+          </svg>
+          <div class="panel-foot">
+            <span>Single-core CPU</span>
+            <span>Path-dependent derivatives</span>
+            <span>Price &amp; Greeks</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics" id="performance" aria-labelledby="performance-title">
+        <h2 id="performance-title" class="sr-only">Qualified performance</h2>
+        <article class="metric metric-primary" data-reveal>
+          <p class="metric-number">14.247 <span>µs</span></p>
+          <p class="metric-label">Fresh N64 arithmetic valuation</p>
+          <span class="metric-index">P / 01</span>
+        </article>
+        <article class="metric" data-reveal>
+          <p class="metric-number">24–27 <span>µs</span></p>
+          <p class="metric-label">Fresh N64 GeoCV valuation</p>
+          <span class="metric-index">P / 02</span>
+        </article>
+        <article class="metric metric-small" data-reveal>
+          <p class="metric-number">4,096 <span>× 64</span></p>
+          <p class="metric-label">Paths × fixing dates</p>
+          <span class="metric-index">C / 01</span>
+        </article>
+        <article class="metric metric-small" data-reveal>
+          <p class="metric-number">1 <span>CPU core</span></p>
+          <p class="metric-label">Intel Sapphire Rapids</p>
+          <span class="metric-index">C / 02</span>
+        </article>
+        <p class="qualification">
+          Current qualified benchmark configuration. Engine-running
+          request-to-result latency on one pinned Sapphire Rapids core. Full
+          methodology available for technical evaluation.
+        </p>
+      </section>
+
+      <section class="next-scene" id="technology" aria-labelledby="technology-title">
+        <p class="eyebrow light"><span>02</span> Execution philosophy</p>
+        <h2 id="technology-title" data-reveal>Less machinery between model and result.</h2>
+        <div class="next-note">
+          <span>Conventional pipeline</span>
+          <span class="compressed">SofL / compressed execution</span>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
