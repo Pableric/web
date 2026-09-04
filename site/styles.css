@@ -280,7 +280,7 @@ button {
   display: grid;
   grid-template-columns: minmax(0, 1fr) clamp(260px, 16vw, 330px);
   gap: 12px;
-  align-items: start;
+  align-items: stretch;
   margin-top: 19px;
 }
 
@@ -288,8 +288,7 @@ button {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 0;
-  aspect-ratio: 1.93 / 1;
+  min-height: clamp(620px, 45vw, 880px);
   width: 100%;
   overflow: hidden;
   padding: 20px;

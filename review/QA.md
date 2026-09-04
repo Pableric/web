@@ -6,14 +6,13 @@
 
 ## Lighthouse
 
-Current homepage reports, including the technology-focused hierarchy and
-revised validation section, are in
-[`lighthouse/2026-09-04-technology-validation/`](./lighthouse/2026-09-04-technology-validation/).
+Current homepage reports, including the hero alignment fix, are in
+[`lighthouse/2026-09-04-hero-alignment/`](./lighthouse/2026-09-04-hero-alignment/).
 
 | Mode | Performance | Accessibility | Best Practices | SEO | LCP | CLS | TBT |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Mobile | 97 | 100 | 100 | 100 | 2.3 s | 0.001 | 20 ms |
-| Desktop | 100 | 100 | 100 | 100 | 0.5 s | 0.002 | 0 ms |
+| Mobile | 97 | 100 | 100 | 100 | 2.4 s | 0.001 | 10 ms |
+| Desktop | 100 | 100 | 100 | 100 | 0.5 s | 0.003 | 0 ms |
 
 Earlier dated audits remain preserved under `review/lighthouse/`. The first
 scored 95 for accessibility because one 10px label measured 4.45:1 contrast;
@@ -31,6 +30,9 @@ captured with reduced motion enabled so the final composition is deterministic.
 
 Current full-page and validation-focused captures are in
 [`screenshots/technology-validation-2026-09-04/`](./screenshots/technology-validation-2026-09-04/).
+
+Completed-state hero alignment captures at 1440 × 1100 and 2048 × 1250 are in
+[`screenshots/hero-alignment-2026-09-04/`](./screenshots/hero-alignment-2026-09-04/).
 
 The full layout-match capture set remains in
 [`screenshots/layout-match-2026-08-25-v5/`](./screenshots/layout-match-2026-08-25-v5/).
@@ -79,6 +81,9 @@ final static composition.
   comparison is revealed before the evidence bars resolve. It does not loop.
 - Reduced motion bypasses GSAP and resolves every animation immediately into
   its complete state.
+- The desktop hero comparison and the full right-hand evidence rail share one
+  computed row height. Their bottom edges align at 1440px and 2048px without
+  clipping the comparison caption or evaluation CTA.
 - No horizontal overflow was observed at the six required widths.
 - The production palette is neutral black, white, and gray; no color accent is
   present in the interface, favicon, logo, or social-preview asset.
