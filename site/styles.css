@@ -254,7 +254,11 @@ button {
 }
 
 .hero {
-  padding: clamp(128px, 7vw, 142px) 0 74px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100svh - 40px);
+  min-height: 760px;
+  padding: clamp(128px, 7vw, 142px) 0 var(--frame-gutter);
 }
 
 .hero.shell {
@@ -278,10 +282,11 @@ button {
 
 .hero-stage {
   display: grid;
+  flex: 1;
   grid-template-columns: minmax(0, 1fr) clamp(260px, 16vw, 330px);
   gap: 12px;
   align-items: stretch;
-  height: clamp(690px, min(43vw, calc(100svh - 390px)), 880px);
+  min-height: 0;
   margin-top: 19px;
 }
 
@@ -1322,6 +1327,12 @@ html.motion-ready:not(.gsap-ready) .sofl-track .track-line b {
 }
 
 @media (max-width: 1100px) {
+  .hero {
+    display: block;
+    height: auto;
+    min-height: 0;
+  }
+
   .desktop-nav {
     display: none;
   }
@@ -1389,6 +1400,7 @@ html.motion-ready:not(.gsap-ready) .sofl-track .track-line b {
   }
 
   .hero-stage {
+    min-height: auto;
     grid-template-columns: 1fr;
     height: auto;
   }
