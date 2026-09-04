@@ -281,6 +281,7 @@ button {
   grid-template-columns: minmax(0, 1fr) clamp(260px, 16vw, 330px);
   gap: 12px;
   align-items: stretch;
+  height: clamp(690px, min(43vw, calc(100svh - 390px)), 880px);
   margin-top: 19px;
 }
 
@@ -288,7 +289,8 @@ button {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: clamp(620px, 45vw, 880px);
+  min-height: 0;
+  height: 100%;
   width: 100%;
   overflow: hidden;
   padding: 20px;
@@ -1388,6 +1390,12 @@ html.motion-ready:not(.gsap-ready) .sofl-track .track-line b {
 
   .hero-stage {
     grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .hero-comparison {
+    height: auto;
+    aspect-ratio: 1.72 / 1;
   }
 
   .hero-rail {
