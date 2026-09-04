@@ -12,10 +12,8 @@ inline SVG. GSAP has no runtime dependencies or external network request; its
 license notice is retained in `site/js/vendor/gsap.min.js`.
 
 The approved SofL artwork is stored as the optimized transparent asset
-`site/assets/logo.png` and is used in the header and footer. The two co-founder
-portraits are stored locally as `site/assets/deni-cofounder.webp` and
-`site/assets/fedor-cofounder.webp`; none of these assets makes an external
-request.
+`site/assets/logo.png` and is used in the header and footer. It makes no
+external request.
 
 ## Status
 

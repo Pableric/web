@@ -1,18 +1,18 @@
 # SofL website QA summary
 
-- Date: 2026-08-25
+- Date: 2026-09-04
 - Production directory: `site/`
 - Audit URL: local static server at `http://127.0.0.1:4193/`
 
 ## Lighthouse
 
-Current homepage reports, including the streamlined page and two-founder
-section, are in
-[`lighthouse/2026-08-25-founders-streamlined/`](./lighthouse/2026-08-25-founders-streamlined/).
+Current homepage reports, including the technology-focused hierarchy and
+revised validation section, are in
+[`lighthouse/2026-09-04-technology-validation/`](./lighthouse/2026-09-04-technology-validation/).
 
 | Mode | Performance | Accessibility | Best Practices | SEO | LCP | CLS | TBT |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Mobile | 97 | 100 | 100 | 100 | 2.4 s | 0.001 | 10 ms |
+| Mobile | 97 | 100 | 100 | 100 | 2.3 s | 0.001 | 20 ms |
 | Desktop | 100 | 100 | 100 | 100 | 0.5 s | 0.002 | 0 ms |
 
 Earlier dated audits remain preserved under `review/lighthouse/`. The first
@@ -29,8 +29,8 @@ Current completed-state hero captures are in
 [`screenshots/home-ratio-cut-2026-08-25/`](./screenshots/home-ratio-cut-2026-08-25/). They were
 captured with reduced motion enabled so the final composition is deterministic.
 
-Current streamlined-page and co-founder captures are in
-[`screenshots/founders-streamlined-2026-08-25/`](./screenshots/founders-streamlined-2026-08-25/).
+Current full-page and validation-focused captures are in
+[`screenshots/technology-validation-2026-09-04/`](./screenshots/technology-validation-2026-09-04/).
 
 The full layout-match capture set remains in
 [`screenshots/layout-match-2026-08-25-v5/`](./screenshots/layout-match-2026-08-25-v5/).
@@ -83,12 +83,17 @@ final static composition.
 - The production palette is neutral black, white, and gray; no color accent is
   present in the interface, favicon, logo, or social-preview asset.
 - The supplied logo is rendered from a 7.4 KB optimized transparent PNG in the
-  header and footer. The two supplied co-founder portraits are local 86 KB and
-  143 KB WebP files, lazy loaded below the fold with explicit intrinsic
-  dimensions and descriptive alt text.
+  header and footer.
 - The former product catalogue, standalone risk section, and five-row
-  integration section were removed. The public narrative now runs directly
-  from validation to co-founders and the final evaluation scene.
+  integration section remain removed. The public narrative now runs directly
+  from validation to the final evaluation scene.
+- The co-founder section, navigation item, and production portrait assets are
+  absent from the current site.
+- Internal review-build and draft-claims notes are absent from public page
+  copy. Claims review remains documented outside `site/` in `review/CLAIMS.md`.
+- Validation describes the QuantLib comparison as an independent reference,
+  not as third-party certification, and visibly qualifies the ~20× observed
+  error reduction as case-specific.
 - All production files, fonts, favicon, social image, `robots.txt`, and
   `sitemap.xml` return HTTP 200 locally.
 - SVG and sitemap XML parse successfully.

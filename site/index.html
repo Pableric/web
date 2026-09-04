@@ -54,7 +54,6 @@
           <a href="#performance">Performance</a>
           <a href="#technology">Technology</a>
           <a href="#validation">Validation</a>
-          <a href="#leadership">Founders</a>
         </nav>
 
         <div class="header-actions">
@@ -68,7 +67,6 @@
             <a href="#performance">Performance</a>
             <a href="#technology">Technology</a>
             <a href="#validation">Validation</a>
-            <a href="#leadership">Founders</a>
             <a href="#contact">Request evaluation <span aria-hidden="true">↗</span></a>
           </nav>
         </details>
@@ -163,11 +161,6 @@
           </aside>
         </div>
 
-        <p class="claim-note">
-          Comparison figures supplied for this review build. Publication
-          requires the matched workload, hardware, outputs and lifecycle
-          boundary to be frozen in the claims ledger.
-        </p>
       </section>
 
       <section class="performance section-pad" id="performance" aria-labelledby="performance-title">
@@ -203,11 +196,6 @@
             </article>
           </div>
 
-          <p class="performance-qualification">
-            Draft comparison claims for final review. The commercial and Python
-            baselines must be frozen with the same contract, path count, fixing
-            count, output, CPU and lifecycle boundary before publication.
-          </p>
         </div>
       </section>
 
@@ -243,11 +231,12 @@
         <div class="shell">
           <div class="section-intro validation-intro">
             <p class="section-label">03 / Validation</p>
-            <h2 id="validation-title" data-reveal>Independently checked.</h2>
+            <h2 id="validation-title" data-reveal>Validated against an independent reference.</h2>
             <p class="section-copy" data-reveal>
-              Speed matters only when the returned number remains credible.
-              The qualified N64 reference contract is checked against an
-              independent high-accuracy QuantLib reference.
+              Performance without accuracy is meaningless. SofL is benchmarked
+              not only on execution time, but increasingly on time to a required
+              pricing error. The qualified N64 contract is validated against a
+              high-accuracy QuantLib reference.
             </p>
           </div>
 
@@ -255,13 +244,13 @@
             <div class="accuracy-statement" data-reveal>
               <p class="accuracy-multiple">~20<span>×</span></p>
               <h3>Lower observed absolute error</h3>
-              <p>GeoCV versus plain arithmetic on the qualified N64 ATM GBM reference contract.</p>
+              <p>GeoCV versus plain SofL, both using 4,096 QMC paths on the qualified N64 ATM GBM reference contract.</p>
             </div>
 
             <figure class="accuracy-chart" data-accuracy-chart>
               <figcaption>
                 <span>Absolute error</span>
-                <span>4,096 paths / N = 64</span>
+                <span>SofL / 4,096 QMC paths / N = 64</span>
               </figcaption>
 
               <div class="bar-row plain-row">
@@ -330,55 +319,8 @@
             </article>
             <article data-reveal>
               <p>16 × 1,048,576</p>
-              <h3>Strong N64 reference</h3>
-              <span>Reference sampling ladder</span>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="leadership section-pad" id="leadership" aria-labelledby="leadership-title">
-        <div class="shell">
-          <div class="section-intro leadership-intro">
-            <p class="section-label">04 / Co-founders</p>
-            <h2 id="leadership-title" data-reveal>Built by the next generation.</h2>
-          </div>
-
-          <div class="founders-grid">
-            <article class="founder-card" data-reveal>
-              <figure class="founder-portrait">
-                <img
-                  src="./assets/deni-cofounder.webp"
-                  alt="Deni, co-founder of SofL"
-                  width="1200"
-                  height="1200"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <div class="founder-role">
-                <span>Co-founder</span>
-                <span>01 / SofL</span>
-              </div>
-              <h3>Deni</h3>
-            </article>
-
-            <article class="founder-card" data-reveal>
-              <figure class="founder-portrait">
-                <img
-                  src="./assets/fedor-cofounder.webp"
-                  alt="Fedor, co-founder of SofL"
-                  width="1200"
-                  height="1200"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <div class="founder-role">
-                <span>Co-founder</span>
-                <span>02 / SofL</span>
-              </div>
-              <h3>Fedor</h3>
+              <h3>QuantLib reference sampling</h3>
+              <span>Independent replications × requested samples</span>
             </article>
           </div>
         </div>
@@ -386,7 +328,7 @@
 
       <section class="contact-scene" id="contact" aria-labelledby="contact-title">
         <div class="shell">
-          <p class="section-label section-label-dark">05 / Technical evaluation</p>
+          <p class="section-label section-label-dark">04 / Technical evaluation</p>
           <h2 id="contact-title" data-reveal>Put SofL against<br />your pricing stack.</h2>
           <div class="contact-lower">
             <p data-reveal>
