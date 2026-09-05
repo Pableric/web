@@ -1,9 +1,13 @@
 <?php
-// Isolated handler tests: /bin/true and /bin/false replace the mail transport.
+// Isolated handler tests with a fake mailer; no SMTP connection is made.
 declare(strict_types=1);
 $root = sys_get_temp_dir() . '/sofl-contact-test-' . bin2hex(random_bytes(6));
 mkdir($root . '/public_html', 0700, true);
 copy(__DIR__ . '/../site/contact.php', $root . '/public_html/contact.php');
+mkdir($root . '/public_html/vendor/phpmailer', 0700, true);
+copy(__DIR__ . '/fake-mailer.php', $root . '/public_html/vendor/phpmailer/PHPMailer.php');
+file_put_contents($root . '/public_html/vendor/phpmailer/SMTP.php', '<?php');
+file_put_contents($root . '/public_html/vendor/phpmailer/Exception.php', '<?php');
 $valid = ['name' => 'Test Visitor', 'email' => 'visitor@example.org',
     'company' => 'Example', 'message' => 'Please discuss a technical evaluation with our team.'];
 $count = 0;
@@ -42,6 +46,8 @@ check('honeypot rejected', 422, array_merge($valid, ['website' => 'spam']));
 check('short message rejected', 422, array_merge($valid, ['message' => 'Hi']));
 check('missing config fails closed', 503, $valid);
 file_put_contents($root . '/sofl-contact-config.php', "<?php return ['recipient'=>'recipient@example.org','sender'=>'sender@example.org'];");
+check('missing SMTP password fails closed', 503, $valid);
+file_put_contents($root . '/sofl-contact-config.php', "<?php return ['recipient'=>'recipient@example.org','sender'=>'sender@example.org','smtp_password'=>'fake-test-password'];");
 check('mail transport failure is honest', 503, $valid, [], '/bin/false');
 unlink($root . '/sofl-contact-rate.json');
 check('accepted submission', 200, $valid);
@@ -55,6 +61,9 @@ check('global limit', 429, $valid);
 file_put_contents($root . '/sofl-contact-rate.json', json_encode([hash('sha256', '127.0.0.1') => [time() - 3601]]));
 check('expired entries reclaimed', 200, $valid);
 foreach ([$root . '/public_html/contact.php', $root . '/sofl-contact-config.php', $root . '/sofl-contact-rate.json'] as $path) unlink($path);
+foreach (['PHPMailer.php', 'SMTP.php', 'Exception.php'] as $file) unlink($root . '/public_html/vendor/phpmailer/' . $file);
+rmdir($root . '/public_html/vendor/phpmailer');
+rmdir($root . '/public_html/vendor');
 rmdir($root . '/public_html');
 rmdir($root);
 echo "$count checks passed; no email sent.\n";

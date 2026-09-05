@@ -76,6 +76,10 @@ try {
             throw new RuntimeException('Invalid configuration');
         }
     }
+    if (!isset($config['smtp_password']) || !is_string($config['smtp_password'])
+        || $config['smtp_password'] === '') {
+        throw new RuntimeException('SMTP configuration missing');
+    }
 
     // One bounded, locked file; no message contents or raw IP addresses stored.
     $ratePath = $privateRoot . '/sofl-contact-rate.json';
@@ -116,15 +120,26 @@ try {
     $body = "SofL website enquiry\n\nName: " . $fields['name']
         . "\nEmail: " . $fields['email'] . "\nCompany: " . $fields['company']
         . "\n\nMessage:\n" . $fields['message'];
-    $headers = [
-        'From' => 'SofL website <' . $config['sender'] . '>',
-        'Reply-To' => $fields['email'],
-        'MIME-Version' => '1.0',
-        'Content-Type' => 'text/plain; charset=UTF-8',
-    ];
-    if (!mail($config['recipient'], 'SofL technical evaluation enquiry', $body, $headers)) {
-        throw new RuntimeException('Mail unavailable');
-    }
+    require_once __DIR__ . '/vendor/phpmailer/Exception.php';
+    require_once __DIR__ . '/vendor/phpmailer/SMTP.php';
+    require_once __DIR__ . '/vendor/phpmailer/PHPMailer.php';
+    $mailer = new \PHPMailer\PHPMailer\PHPMailer(true);
+    $mailer->isSMTP();
+    $mailer->Host = 'mail.privateemail.com';
+    $mailer->Port = 465;
+    $mailer->SMTPSecure = \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_SMTPS;
+    $mailer->SMTPAuth = true;
+    $mailer->Username = $config['sender'];
+    $mailer->Password = $config['smtp_password'];
+    $mailer->SMTPDebug = 0;
+    $mailer->Timeout = 15;
+    $mailer->CharSet = 'UTF-8';
+    $mailer->setFrom($config['sender'], 'SofL website');
+    $mailer->addAddress($config['recipient']);
+    $mailer->addReplyTo($fields['email'], $fields['name']);
+    $mailer->Subject = 'SofL technical evaluation enquiry';
+    $mailer->Body = $body;
+    $mailer->send();
 } catch (Throwable $error) {
     // Never return mail configuration, addresses or exception details to visitors.
     error_log('SofL contact: submission service unavailable.');

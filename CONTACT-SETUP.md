@@ -11,24 +11,30 @@ Do this before deploying the form update. No mailbox credentials belong in Git.
    <?php
    return [
        'recipient' => 'YOUR_PRIVATE_RECEIVING_ADDRESS',
-       'sender' => 'YOUR_HOSTING_APPROVED_SENDER_ADDRESS',
+       'sender' => 'YOUR_PRIVATE_EMAIL_MAILBOX_ADDRESS',
+       'smtp_password' => 'YOUR_PRIVATE_EMAIL_MAILBOX_PASSWORD',
    ];
    ```
 
 3. Set its permissions to `600`. The account running PHP needs read access.
    The account home must also be writable by PHP for `sofl-contact-rate.json`.
-4. Choose PHP 8.1 or newer in cPanel's PHP settings.
+4. Choose PHP 8.1 or newer with OpenSSL enabled in cPanel's PHP settings.
 5. Use **Git Version Control → Manage → Pull or Deploy → Update from Remote**,
    then **Deploy HEAD Commit**. The existing `.cpanel.yml` copies only `site/`.
 6. Send one real test enquiry through the website. Confirm receipt and that
    Reply responds to the visitor. Check spam and cPanel Track Delivery if needed.
 
-For PHP `mail()`, Namecheap requires a sender on a domain hosted on its server
-with suitable local mail routing. Use the hosting-approved sender, not the
-visitor's address. The visitor goes in Reply-To. If the domain uses an external
-mail provider, ask Namecheap which sender/subdomain is valid for PHP mail; do
-not change the main domain's routing blindly. SMTP would need a separate setup.
-See [Namecheap contact-form guidance](https://www.namecheap.com/support/knowledgebase/article/10038/31/how-to-configure-a-contact-form-with-us/).
+The handler uses Namecheap Private Email SMTP at `mail.privateemail.com:465`
+with authenticated TLS and certificate verification enabled. Sender and recipient
+may be the same mailbox. The sender is also the SMTP login; use that mailbox's
+password, not the Namecheap account password. No mail routing changes are needed.
+The visitor goes in Reply-To. PHPMailer 7.1.1 is included in `site/vendor/` so no
+installation is required on Namecheap.
+See [Namecheap Private Email settings](https://www.namecheap.com/support/knowledgebase/article.aspx/1179/2175/general-private-email-configuration-for-mail-clients-and-mobile-devices/).
+
+Within a PHP single-quoted password string, write an apostrophe as `\'` and a
+backslash as `\\`. Never paste the real configuration into Git or send a screenshot
+containing the password. Leave SMTP debug disabled.
 
 The handler returns a generic unavailable response if configuration is missing
 or mail submission fails. It never returns the configured addresses or errors.

@@ -72,7 +72,8 @@ future page variants.
 Evaluation buttons lead to the message form. The PHP handler reads the recipient
 and sender from a private file outside the web root and repository. See
 [contact setup](./CONTACT-SETUP.md) before deploying this update. PHP 8.1 or newer
-is required. A Python static preview cannot process submissions.
+with OpenSSL is required. The handler sends through Namecheap Private Email
+using the included PHPMailer library. A Python static preview cannot process submissions.
 
 The handler validates fields, rejects header injection and cross-site browser
 requests, includes a honeypot, and limits each IP to five submissions per hour
