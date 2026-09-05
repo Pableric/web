@@ -1236,6 +1236,48 @@ button {
   border-top: 1px solid var(--dark-rule);
 }
 
+.contact-form[hidden],
+.contact-success[hidden] {
+  display: none;
+}
+
+.contact-success {
+  padding: clamp(28px, 4vw, 56px);
+  border: 1px solid var(--dark-rule);
+  background: #151515;
+}
+
+.contact-success-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 32px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  font-size: 24px;
+}
+
+.contact-success h3 {
+  font-size: clamp(36px, 4vw, 60px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.contact-success p {
+  margin-top: 20px;
+  color: #b6b7b1;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.contact-success .button {
+  width: 100%;
+  margin-top: 36px;
+  cursor: pointer;
+}
+
 .contact-form-trap {
   position: absolute;
   overflow: hidden;

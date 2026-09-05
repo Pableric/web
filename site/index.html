@@ -36,9 +36,9 @@
     <meta name="twitter:image" content="https://sofl.io/assets/sofl-og.png" />
 
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="./styles.css?v=20260905-contact" />
+    <link rel="stylesheet" href="./styles.css?v=20260905-confirmation" />
     <script src="./js/vendor/gsap.min.js" defer></script>
-    <script src="./js/main.js?v=20260905-contact" defer></script>
+    <script src="./js/main.js?v=20260905-confirmation" defer></script>
   </head>
 
   <body>
@@ -337,9 +337,9 @@
               and licensing discussions.
             </p>
 
+            <div id="contact-form">
             <form
               class="contact-form"
-              id="contact-form"
               action="./contact.php"
               method="post"
               data-contact-form
@@ -413,6 +413,15 @@
                 </button>
               </div>
             </form>
+            <div class="contact-success" data-contact-success hidden>
+              <span class="contact-success-icon" aria-hidden="true">✓</span>
+              <h3 tabindex="-1" data-contact-success-title>Message sent.</h3>
+              <p>Thank you for contacting SofL. We’ll reply to the email address you provided.</p>
+              <button class="button button-accent" type="button" data-contact-again>
+                <span>Send another message</span><span aria-hidden="true">↗</span>
+              </button>
+            </div>
+            </div>
           </div>
         </div>
       </section>

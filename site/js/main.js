@@ -132,6 +132,16 @@ if (contactForm) {
   const contactStatus = contactForm.querySelector("[data-contact-status]");
   const contactSubmit = contactForm.querySelector("[data-contact-submit]");
   const contactSubmitLabel = contactForm.querySelector("[data-contact-submit-label]");
+  const contactSuccess = document.querySelector("[data-contact-success]");
+  const contactSuccessTitle = contactSuccess.querySelector("[data-contact-success-title]");
+
+  contactSuccess.querySelector("[data-contact-again]").addEventListener("click", () => {
+    contactSuccess.hidden = true;
+    contactForm.hidden = false;
+    contactStatus.textContent = "All fields marked * are required.";
+    contactStatus.classList.remove("is-success", "is-error");
+    contactForm.querySelector("[name=name]").focus();
+  });
 
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -159,6 +169,9 @@ if (contactForm) {
       contactForm.reset();
       contactStatus.textContent = result.message || "Message sent. SofL will be in touch.";
       contactStatus.classList.add("is-success");
+      contactForm.hidden = true;
+      contactSuccess.hidden = false;
+      contactSuccessTitle.focus();
     } catch (error) {
       contactStatus.textContent = error.message || "The message could not be sent. Please try again.";
       contactStatus.classList.add("is-error");
