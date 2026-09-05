@@ -36,9 +36,9 @@
     <meta name="twitter:image" content="https://sofl.io/assets/sofl-og.png" />
 
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="./styles.css?v=20260904-2" />
+    <link rel="stylesheet" href="./styles.css?v=20260905-contact" />
     <script src="./js/vendor/gsap.min.js" defer></script>
-    <script src="./js/main.js" defer></script>
+    <script src="./js/main.js?v=20260905-contact" defer></script>
   </head>
 
   <body>
@@ -155,7 +155,7 @@
               <p>Paths × fixing dates / one Sapphire Rapids core.</p>
             </article>
 
-            <a class="hero-rail-cta" href="mailto:pablo@sofl.io?subject=SofL%20technical%20evaluation">
+            <a class="hero-rail-cta" href="#contact-form">
               Request a technical evaluation <span aria-hidden="true">↗</span>
             </a>
           </aside>
@@ -336,9 +336,83 @@
               and technology partners for independent evaluation, integration
               and licensing discussions.
             </p>
-            <a class="button button-accent" href="mailto:pablo@sofl.io?subject=SofL%20technical%20evaluation">
-              Request an evaluation <span aria-hidden="true">↗</span>
-            </a>
+
+            <form
+              class="contact-form"
+              id="contact-form"
+              action="./contact.php"
+              method="post"
+              data-contact-form
+            >
+              <div class="contact-form-trap" aria-hidden="true">
+                <label for="contact-website">Website</label>
+                <input
+                  id="contact-website"
+                  name="website"
+                  type="text"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+              </div>
+
+              <label class="contact-field" for="contact-name">
+                <span>Name *</span>
+                <input
+                  id="contact-name"
+                  name="name"
+                  type="text"
+                  maxlength="100"
+                  autocomplete="name"
+                  required
+                />
+              </label>
+
+              <label class="contact-field" for="contact-email">
+                <span>Work email *</span>
+                <input
+                  id="contact-email"
+                  name="email"
+                  type="email"
+                  maxlength="254"
+                  autocomplete="email"
+                  inputmode="email"
+                  required
+                />
+              </label>
+
+              <label class="contact-field" for="contact-company">
+                <span>Company</span>
+                <input
+                  id="contact-company"
+                  name="company"
+                  type="text"
+                  maxlength="150"
+                  autocomplete="organization"
+                />
+              </label>
+
+              <label class="contact-field contact-field-message" for="contact-message">
+                <span>Message *</span>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  rows="5"
+                  minlength="20"
+                  maxlength="5000"
+                  required
+                ></textarea>
+              </label>
+
+              <div class="contact-form-actions">
+                <p class="contact-form-status" role="status" aria-live="polite" data-contact-status>
+                  All fields marked * are required.
+                </p>
+                <button class="button button-accent" type="submit" data-contact-submit>
+                  <span data-contact-submit-label>Send message</span>
+                  <span aria-hidden="true">↗</span>
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </section>

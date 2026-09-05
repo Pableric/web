@@ -108,8 +108,8 @@ final static composition.
 - SVG and sitemap XML parse successfully.
 - GSAP is served locally, retains its license notice, and introduces no
   third-party runtime request.
-- No visible email address is rendered; the destination remains in labeled
-  `mailto:` links as documented in the README.
+- Contact behavior changed after these September 4 audits: the message form
+  uses a PHP handler and private server configuration. See `CONTACT-SETUP.md`.
 - No microsecond figure is rendered.
 - Prohibited superlatives, named competitor copy, and proprietary architecture
   terminology were not found in `site/`.

@@ -125,3 +125,47 @@ if (mobileMenu) {
     link.addEventListener("click", () => mobileMenu.removeAttribute("open"));
   });
 }
+
+const contactForm = document.querySelector("[data-contact-form]");
+
+if (contactForm) {
+  const contactStatus = contactForm.querySelector("[data-contact-status]");
+  const contactSubmit = contactForm.querySelector("[data-contact-submit]");
+  const contactSubmitLabel = contactForm.querySelector("[data-contact-submit-label]");
+
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!contactForm.reportValidity()) return;
+
+    contactForm.setAttribute("aria-busy", "true");
+    contactSubmit.disabled = true;
+    contactSubmitLabel.textContent = "Sending";
+    contactStatus.textContent = "Sending your message securely…";
+    contactStatus.classList.remove("is-success", "is-error");
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: new FormData(contactForm),
+        headers: { Accept: "application/json" },
+      });
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok || result.ok !== true) {
+        throw new Error(result.message || "The message could not be sent. Please try again.");
+      }
+
+      contactForm.reset();
+      contactStatus.textContent = result.message || "Message sent. SofL will be in touch.";
+      contactStatus.classList.add("is-success");
+    } catch (error) {
+      contactStatus.textContent = error.message || "The message could not be sent. Please try again.";
+      contactStatus.classList.add("is-error");
+    } finally {
+      contactForm.removeAttribute("aria-busy");
+      contactSubmit.disabled = false;
+      contactSubmitLabel.textContent = "Send message";
+    }
+  });
+}

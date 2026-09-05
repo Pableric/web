@@ -1,7 +1,7 @@
 # SofL website
 
-Static public website for `sofl.io`. There is no build step, backend, CMS,
-analytics, cookie state, or runtime third-party dependency.
+Public website for `sofl.io`, with a small PHP contact handler. There is no
+build step, CMS, analytics, cookie state, or runtime third-party dependency.
 
 The selected visual direction is a monochrome scientific-editorial system:
 compact boxed navigation, oversized sans/serif typography, asymmetrical proof
@@ -25,7 +25,7 @@ comparison require final matched-baseline evidence and copy approval. See
 
 ## Directories
 
-- `site/` — the complete upload-ready static website;
+- `site/` — the website and PHP contact handler;
 - `animation-lab/` — a private, no-index gallery of 20 hero animation studies;
 - `prototypes/` — the three first-screen direction studies;
 - `review/` — screenshots, claims, source artwork, and audit reports.
@@ -69,10 +69,20 @@ future page variants.
 
 ## Contact behavior
 
-The email address is not shown in visible page copy. Evaluation buttons use a
-labeled `mailto:` link. This keeps the interface clean, but the destination is
-necessarily present in the HTML source. Avoiding source exposure would require
-a form relay or another backend service, which is intentionally outside v1.
+Evaluation buttons lead to the message form. The PHP handler reads the recipient
+and sender from a private file outside the web root and repository. See
+[contact setup](./CONTACT-SETUP.md) before deploying this update. PHP 8.1 or newer
+is required. A Python static preview cannot process submissions.
+
+The handler validates fields, rejects header injection and cross-site browser
+requests, includes a honeypot, and limits each IP to five submissions per hour
+with a 30-second cooldown and a site-wide maximum of 40 per hour. These limits
+reduce abuse; they do not guarantee zero spam. Rate data expires after an hour
+and contains hashed IPs and timestamps, not message contents. A successful
+response means the mail server accepted the message, not confirmed inbox delivery.
+
+Previous Git commits and historic review artifacts may still contain the former
+address. This change does not rewrite Git history.
 
 ## Namecheap cPanel deployment
 
@@ -91,7 +101,7 @@ Do not upload `prototypes/` or `review/`.
 ## Review checks
 
 - Test widths: 1440, 1280, 1024, 768, 430, and 390px.
-- Confirm keyboard focus, mobile menu, details disclosure, and mail links.
+- Confirm keyboard focus, mobile menu, details disclosure, and message form.
 - Test with JavaScript disabled and with reduced motion enabled.
 - Run Lighthouse against the locally served `site/` and retain its HTML/JSON
   reports under a new `review/lighthouse/` path.

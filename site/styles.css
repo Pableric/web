@@ -609,11 +609,11 @@ button {
   text-decoration: none;
 }
 
-.button span {
+.button > span:last-child {
   transition: transform 180ms ease;
 }
 
-.button:hover span {
+.button:hover > span:last-child {
   transform: translate(3px, -3px);
 }
 
@@ -1217,17 +1217,108 @@ button {
 
 .contact-lower {
   display: grid;
-  grid-template-columns: 0.9fr 0.7fr;
+  grid-template-columns: minmax(0, 0.72fr) minmax(420px, 1fr);
   gap: clamp(80px, 14vw, 220px);
-  align-items: end;
+  align-items: start;
   margin-top: clamp(90px, 10vw, 150px);
 }
 
-.contact-lower p {
+.contact-lower > p {
   max-width: 640px;
   color: #a4a59f;
   font-size: 18px;
   line-height: 1.55;
+}
+
+.contact-form {
+  position: relative;
+  display: grid;
+  border-top: 1px solid var(--dark-rule);
+}
+
+.contact-form-trap {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.contact-field {
+  display: grid;
+  gap: 12px;
+  padding: 18px 0 14px;
+  border-bottom: 1px solid var(--dark-rule);
+}
+
+.contact-field span {
+  color: #858680;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.contact-field input,
+.contact-field textarea {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--white);
+  font: inherit;
+  font-size: 19px;
+  line-height: 1.45;
+}
+
+.contact-field textarea {
+  min-height: 126px;
+  resize: vertical;
+}
+
+.contact-field:focus-within {
+  border-bottom-color: var(--white);
+}
+
+.contact-field:focus-within span {
+  color: var(--white);
+}
+
+.contact-form-actions {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding-top: 18px;
+}
+
+.contact-form-status {
+  max-width: 34ch;
+  color: #858680;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.contact-form-status.is-success {
+  color: var(--white);
+}
+
+.contact-form-status.is-error {
+  color: #d7d7d2;
+}
+
+.contact-form .button {
+  min-width: 190px;
+  border: 0;
+  cursor: pointer;
+}
+
+.contact-form .button:disabled {
+  cursor: wait;
+  opacity: 0.56;
 }
 
 .button-accent {
@@ -1785,6 +1876,14 @@ html.motion-ready:not(.gsap-ready) .sofl-track .track-line b {
 
   .contact-lower p {
     font-size: 17px;
+  }
+
+  .contact-form-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form .button {
+    width: 100%;
   }
 
   .footer-grid {
